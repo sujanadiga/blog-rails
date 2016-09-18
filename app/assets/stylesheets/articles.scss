@@ -1,3 +1,62 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary-color: #004b91;
+
+body {
+  font-family: "Roboto Mono";
+  font-size: 16px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr td {
+  padding: 5px;
+}
+
+thead {
+  background-color: $primary-color;
+  color: white;
+
+  th {
+    padding: 10px;
+  }
+}
+
+.btn {
+  border: 1px solid $primary-color;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 16px;
+  height: 33px;
+  background-color: white;
+  color: $primary-color;
+  cursor: pointer;
+  vertical-align: middle;
+
+  &--warning {
+    color: orange;
+  }
+}
+
+.article-text {
+  max-width: 65vw;
+  max-height: 200px;
+
+}
+
+p.article-text {
+  text-indent: 50px;
+  max-width: 100%;
+}
+
+.article-title {
+  max-width: 25vw;
+}
+
+.article-action {
+  text-align: center;
+}

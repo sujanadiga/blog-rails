@@ -1,0 +1,17 @@
+<h1>Edit Article</h1>
+<%= form_for :article, url: article_path(@article), method: :patch do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, :value => @article.title %>
+  </p>
+
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text, :value => @article.text %>
+  </p>
+
+  <p>
+    <%= link_to 'Back', articles_path, class: 'btn' %>
+    <%= f.submit :class => 'btn' %>
+  </p>
+<% end %>

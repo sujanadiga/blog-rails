@@ -1,10 +1,9 @@
-<p>
-  <strong>Title:</strong>
+<h2>
   <%= @article.title %>
-</p>
+</h2>
 
-<p>
-  <strong>Text:</strong>
+<p class="article-text">
   <%= @article.text %>
 </p>
+<br/>
 <%= link_to 'Back', articles_path %>

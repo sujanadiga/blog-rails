@@ -2,19 +2,24 @@
 <table border="1">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Text</th>
+      <th class="article-title">Title</th>
+      <th class="article-text">Content</th>
+      <th class="article-action">Action</th>
     </tr>
   </thead>
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.title %></td>
-        <td><%= article.text %></td>
-        <td><%= link_to 'Show', article_path(article) %></td>
+        <td class="article-title"><%= article.title %></td>
+        <td class="article-text"><%= article.text %></td>
+        <td class="article-action">
+          <%= link_to 'Read', article_path(article) %>
+          <%= link_to 'Edit', edit_article_path(article), class: 'btn--warning' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'New', new_article_path %>
+<br/>
+<%= link_to 'Write a new atricle', new_article_path, class: 'btn' %>
 <%-# link_to 'New', controller: 'articles', action: 'new' -%>
