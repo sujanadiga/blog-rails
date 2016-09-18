@@ -51,6 +51,7 @@ thead {
 p.article-text {
   text-indent: 50px;
   max-width: 100%;
+  max-height: none;
 }
 
 .article-title {
@@ -60,3 +61,27 @@ p.article-text {
 .article-action {
   text-align: center;
 }
+
+input[type='text'], textarea {
+  width: 100%;
+  font-size: 14px;
+  padding: 5px 10px 5px 10px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+
+  &:focus {
+    outline: none;
+    border: 2px solid $primary-color;
+  }
+}
+
+textarea {
+  height: 60vh;
+}
+
+input[type='text'] {
+  height: 40px;
+}
+  
