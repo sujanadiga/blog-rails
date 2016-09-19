@@ -5,7 +5,7 @@
 $primary-color: #004b91;
 
 body {
-  font-family: "Roboto Mono";
+  font-family: Roboto, sans-serif;
   font-size: 16px;
 }
 
@@ -31,7 +31,7 @@ thead {
   border-radius: 3px;
   padding: 5px;
   font-size: 16px;
-  height: 33px;
+  height: 31px;
   background-color: white;
   color: $primary-color;
   cursor: pointer;
