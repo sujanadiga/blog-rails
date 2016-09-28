@@ -40,6 +40,15 @@ thead {
   &--warning {
     color: orange;
   }
+
+  &--error {
+    color: red;
+  }
+
+  &--block {
+    color: white;
+    background-color: $primary-color;
+  }
 }
 
 .article-text {
@@ -84,3 +93,6 @@ input[type='text'] {
   height: 40px;
 }
   
+.field_with_errors {
+  display: inline;
+}

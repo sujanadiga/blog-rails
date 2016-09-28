@@ -15,11 +15,12 @@
         <td class="article-action">
           <%= link_to 'Read', article_path(article) %>
           <%= link_to 'Edit', edit_article_path(article), class: 'btn--warning' %>
+          <%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn--error' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br/>
-<%= link_to 'Write a new atricle', new_article_path, class: 'btn' %>
+<%= link_to 'Write a new atricle', new_article_path, class: 'btn btn--block' %>
 <%-# link_to 'New', controller: 'articles', action: 'new' -%>
