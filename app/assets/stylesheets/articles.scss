@@ -43,19 +43,19 @@ thead {
 }
 
 .article-text {
-  max-width: 65vw;
+  width: 70vw;
   max-height: 200px;
 
 }
 
 p.article-text {
   text-indent: 50px;
-  max-width: 100%;
+  width: 100%;
   max-height: none;
 }
 
 .article-title {
-  max-width: 25vw;
+  width: 20vw;
 }
 
 .article-action {
@@ -69,16 +69,15 @@ input[type='text'], textarea {
   box-sizing: border-box;
   margin-top: 10px;
   border: 1px solid black;
-  border-radius: 3px;
 
   &:focus {
-    outline: none;
-    border: 2px solid $primary-color;
+    outline: $primary-color solid 2px;
   }
 }
 
 textarea {
   height: 60vh;
+  max-width: 100%;
 }
 
 input[type='text'] {
