@@ -1,0 +1,17 @@
+%h2
+  = @article.title
+
+= link_to 'Back', articles_path
+= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn--error text-right'
+= link_to 'Edit', edit_article_path(@article), class: 'btn--warning text-right'
+
+%p.article-text
+  = @article.text
+
+%h4 Comments
+%h5
+  = pluralize(@article.comments.count, 'comment')
+
+= render @article.comments
+
+= render 'comments/form'
