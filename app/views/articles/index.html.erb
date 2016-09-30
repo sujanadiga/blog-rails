@@ -1,0 +1,26 @@
+<h1>List of articles</h1>
+<table border="1">
+  <thead>
+    <tr>
+      <th class="article-title">Title</th>
+      <th class="article-text">Content</th>
+      <th class="article-action">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td class="article-title"><%= article.title %></td>
+        <td class="article-text"><%= article.text %></td>
+        <td class="article-action">
+          <%= link_to 'Read', article_path(article) %>
+          <%= link_to 'Edit', edit_article_path(article), class: 'btn--warning' %>
+          <%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn--error' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+<%= link_to 'Write a new atricle', new_article_path, class: 'btn btn--block' %>
+<%-# link_to 'New', controller: 'articles', action: 'new' -%>
