@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   resources :articles do
-    resources :comments
+    resources :comments, only: [:create, :destroy]
   end
   root 'articles#index'
 end
