@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :get_article, only: [:update, :show, :edit, :destroy]
-  http_basic_authenticate_with name: Rails.application.secrets.user, password: Rails.application.secrets.password, except: [:index, :show]
 
   def index
     @articles = Article.all
