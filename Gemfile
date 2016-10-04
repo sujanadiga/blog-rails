@@ -28,7 +28,6 @@ gem 'haml-rails', '~> 0.9.0'
 
 gem 'devise', '~> 4.2.0'
 
-gem 'annotate'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -50,6 +49,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'rails_best_practices'
   gem 'better_errors'
+  gem 'annotate'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
