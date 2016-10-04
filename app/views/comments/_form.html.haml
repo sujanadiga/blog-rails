@@ -1,4 +1,4 @@
-= form_for([@article, @article.comments.build], html: {class: 'comment-form'}) do |f|
+= form_for([article, article.comments.build], html: {class: 'comment-form'}) do |f|
   %p
     = f.text_area :message, placeholder: 'Add a comment', required: 'required', class: 'comment-body'
   %p
