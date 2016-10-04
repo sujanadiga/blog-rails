@@ -1,15 +1,15 @@
 class CommentsController < ApplicationController
   before_filter :authenticate_user!
+  before_action :get_article, only: [:create, :destroy]
 
   def create
-    @article = Article.find(params[:article_id])
-    @comment = @article.comments.create(comment_params)
+    @user = current_user
+    @comment = @article.comments.create({message: params[:comment][:message], user_id: @user.id})
 
     redirect_to article_path(@article)
   end
 
   def destroy
-    @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
 
     @comment.destroy
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   end
 
   private
-    def comment_params
-      params.require(:comment).permit(:message)
+    def get_article
+      @article = Article.find(params[:article_id])
     end
 end

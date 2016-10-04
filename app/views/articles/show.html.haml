@@ -5,7 +5,11 @@
 = link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn--error text-right'
 = link_to 'Edit', edit_article_path(@article), class: 'btn--warning text-right'
 
-%p= render 'shared/timeago', datetime: @article.created_at
+%p
+  Written by
+  %b= @article.user.email
+  = render 'shared/timeago', datetime: @article.created_at
+
 %p.article-text
   = @article.text
 
