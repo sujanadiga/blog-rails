@@ -29,8 +29,7 @@ Rails.application.configure do
   }
 
   BetterErrors::Middleware.allow_ip! Rails.application.secrets.trusted_ip
-  # config.web_console.whitelisted_ips = '0.0.0.0/0.0.0.0'
-  # config.web_console.whiny_requests = false
+  config.web_console.whiny_requests = false
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
