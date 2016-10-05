@@ -6,4 +6,4 @@
     .comment-delete-btn
       = link_to 'x', [comment.article, comment], method: :delete, data: {confirm: 'Are you sure?'}
   .comment-message
-    = comment.message
+    = simple_format(comment.message)

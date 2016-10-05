@@ -11,7 +11,7 @@
   = render 'shared/timeago', datetime: @article.created_at
 
 %p.article-text
-  = @article.text
+  = simple_format(@article.text)
 
 %h4 Comments
 %h5

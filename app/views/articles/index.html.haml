@@ -9,7 +9,7 @@
     - @articles.each do |article|
       %tr
         %td.article-title= article.title
-        %td.article-text= article.text
+        %td.article-text= simple_format(article.text)
         %td.article-action
           =link_to 'Read', article_path(article)
           =link_to 'Edit', edit_article_path(article), class: 'btn--warning'
