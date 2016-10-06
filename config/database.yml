@@ -7,7 +7,7 @@
 default: &default
   adapter: mysql2
   host: <%= Rails.application.secrets.host %>
-  user: <%= Rails.application.secrets.user %>
+  username: <%= Rails.application.secrets.user %>
   password: <%= Rails.application.secrets.password %>
   database: <%= Rails.application.secrets.database %>
 
