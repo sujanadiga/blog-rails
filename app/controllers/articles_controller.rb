@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-  before_filter :authenticate_user!
   before_action :get_article, only: [:update, :show, :edit, :destroy]
 
   def index
@@ -14,7 +13,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     if @article.save
       redirect_to @article
-    else 
+    else
       render 'new'
     end
 
