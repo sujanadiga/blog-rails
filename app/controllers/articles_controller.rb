@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-  before_filter :authenticate_user!
   before_action :get_article, only: [:update, :show, :edit, :destroy]
   before_action :get_user, only: [:new, :create]
 
