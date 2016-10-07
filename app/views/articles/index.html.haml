@@ -1,0 +1,18 @@
+%h1 List of articles
+%table{:border => "1"}
+  %thead
+    %tr
+      %th.article-title Title
+      %th.article-text Content
+      %th.article-action Action
+  %tbody
+    - @articles.each do |article|
+      %tr
+        %td.article-title= article.title
+        %td.article-text= article.text
+        %td.article-action
+          =link_to 'Read', article_path(article)
+          =link_to 'Edit', edit_article_path(article), class: 'btn--warning'
+          =link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn--error'
+%br
+= link_to 'Write a new atricle', new_article_path, class: 'btn btn--block'

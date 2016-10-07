@@ -102,3 +102,27 @@ input[type='text'] {
 .text-right {
   float: right;
 }
+
+.nav {
+  height: 56px;
+  margin: -10px;
+  margin-bottom: 0px;
+  padding: 10px 0 10px 20px;
+  box-sizing: border-box;
+  font-size: 30px;
+  background-color: $primary-color;
+  color: white;
+
+  .settings {
+    position: absolute;
+    right: 20px;
+    top: 19px;
+    display: inline-block;
+    font-size: 14px;
+
+    a {
+      color: white;
+      margin-left: 10px;
+    }
+  }
+}

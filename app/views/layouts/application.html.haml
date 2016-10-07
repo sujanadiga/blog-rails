@@ -1,0 +1,18 @@
+!!! 5
+%html>
+%head>
+  %title Blog
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+
+%body
+.nav
+  My Blog
+  .settings
+    - if user_signed_in?
+      =link_to 'Logout', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure you want to log out?'}
+    - else
+      =link_to 'Sign Up', new_user_registration_path
+      =link_to 'Sign In', new_user_session_path
+= yield
