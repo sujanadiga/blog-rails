@@ -15,4 +15,7 @@
           =link_to 'Edit', edit_article_path(article), class: 'btn--warning'
           =link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn--error'
 %br
+%span{style: 'float: right'}= will_paginate @articles
 = link_to 'Write a new atricle', new_article_path, class: 'btn btn--block'
+%br
+%br
