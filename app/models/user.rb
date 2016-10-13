@@ -28,4 +28,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "50X50>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 end

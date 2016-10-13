@@ -29,6 +29,7 @@ gem 'haml-rails', '~> 0.9.0'
 gem 'mysql2', '~> 0.4.4'
 gem 'devise', '~> 4.2.0'
 gem 'will_paginate', '~> 3.1.0'
+gem "paperclip", "~> 5.0.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
