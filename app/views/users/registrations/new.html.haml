@@ -16,6 +16,10 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
+  .field
+    = f.label :avatar
+    %br/
+    = f.file_field :avatar
   .actions
     = f.submit "Sign up"
 = render "users/shared/links"
