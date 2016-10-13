@@ -124,5 +124,13 @@ input[type='text'] {
       color: white;
       margin-left: 10px;
     }
+
+    .avatar {
+      position: absolute;
+      right: 60px;
+      top: -16px;
+      background-color: white;
+      border-radius: 3px;
+    }
   }
 }
