@@ -8,13 +8,18 @@
       =c.value_fields do |v|
         =v.text_field :value
   %p
+  .field
+    Sort:
+    =f.sort_fields do |s|
+      =s.sort_select
+    %p
   = f.submit class: 'btn btn--block'
 %br
 %table{:border => "1"}
   %thead
     %tr
       %th.article-title
-        =sort_link(@q, :title, 'Title', default_order: :asc)
+        =sort_link(@q, :title, 'Title', default_order: :desc)
       %th.article-author
         =sort_link(@q, :user_email, 'Author')
       %th.article-text Content

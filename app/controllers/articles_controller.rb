@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
     @q = Article.ransack(params[:q])
     @articles = @q.result.includes(:user).paginate(page: params[:page], per_page: 5).order(updated_at: :desc)
     @q.build_condition
+    @q.build_sort if @q.sorts.empty?
   end
 
   def new
