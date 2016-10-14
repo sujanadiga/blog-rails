@@ -150,3 +150,22 @@ input[type='text'] {
     outline: none;
   }
 }
+
+.field {
+  input, select {
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid $primary-color;
+    font-size: 14px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input {
+    width: 300px;
+  }
+}

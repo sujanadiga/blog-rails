@@ -1,12 +1,13 @@
 %h1 List of articles
 = search_form_for @q do |f|
-
-  = f.label :title_start
-  = f.search_field :title_start, class: 'search-input'
-
-  = f.label :user_email_or_text_or_title_cont
-  = f.search_field :user_email_or_text_or_title_cont, class: 'search-input'
-
+  = f.condition_fields do |c|
+    .field
+      =c.attribute_fields do |a|
+        =a.attribute_select associations: [:user]
+      =c.predicate_select
+      =c.value_fields do |v|
+        =v.text_field :value
+  %p
   = f.submit class: 'btn btn--block'
 %br
 %table{:border => "1"}
