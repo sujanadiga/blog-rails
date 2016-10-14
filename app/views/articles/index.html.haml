@@ -1,15 +1,32 @@
 %h1 List of articles
+= search_form_for @q do |f|
+
+  = f.label :title_start
+  = f.search_field :title_start, class: 'search-input'
+
+  = f.label :user_email_or_text_or_title_cont
+  = f.search_field :user_email_or_text_or_title_cont, class: 'search-input'
+
+  = f.submit class: 'btn btn--block'
+%br
 %table{:border => "1"}
   %thead
     %tr
-      %th.article-title Title
+      %th.article-title
+        =sort_link(@q, :title, 'Title', default_order: :asc)
+      %th.article-author
+        =sort_link(@q, :user_email, 'Author')
       %th.article-text Content
       %th.article-action Action
   %tbody
+    - if @articles.empty?
+      %tr
+        %td{colspan: 4, style: 'text-align: center'} No articles to display
     - @articles.each do |article|
       %tr
         %td.article-title= article.title
-        %td.article-text= simple_format(article.text)
+        %td.article-author= article.user.email
+        %td.article-text= simple_format(truncate(article.text, length: 240))
         %td.article-action
           =link_to 'Read', article_path(article)
           =link_to 'Edit', edit_article_path(article), class: 'btn--warning'
