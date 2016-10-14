@@ -24,6 +24,9 @@ thead {
   th {
     padding: 10px;
   }
+  .sort_link {
+    color: white;
+  }
 }
 
 .btn {
@@ -132,5 +135,18 @@ input[type='text'] {
       background-color: white;
       border-radius: 3px;
     }
+  }
+}
+
+.search-input {
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid $primary-color;
+  font-size: 14px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  &:focus {
+    outline: none;
   }
 }
