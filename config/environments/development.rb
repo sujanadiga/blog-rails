@@ -27,6 +27,10 @@ Rails.application.configure do
     :authentication       => :plain,
     :enable_starttls_auto => true
   }
+
+  BetterErrors::Middleware.allow_ip! Rails.application.secrets.trusted_ip
+  config.web_console.whiny_requests = false
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
