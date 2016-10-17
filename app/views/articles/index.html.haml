@@ -12,7 +12,7 @@
   %tbody
     - if @articles.empty?
       %tr
-        %td{colspan: 4, style: 'text-align: center'} No articles to display
+        %td.text-center{colspan: 4} No articles to display
     - @articles.each do |article|
       %tr
         %td.article-title= article.title
@@ -23,7 +23,7 @@
           =link_to 'Edit', edit_article_path(article), class: 'btn--warning'
           =link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn--error'
 %br
-%span{style: 'float: right'}= will_paginate @articles
+%span.float-right= will_paginate @articles
 = link_to 'Write a new atricle', new_article_path, class: 'btn btn--block'
 %br
 %br

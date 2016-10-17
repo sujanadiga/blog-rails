@@ -151,7 +151,7 @@ input[type='text'] {
   }
 }
 
-.field {
+.search-field {
   input, select {
     height: 30px;
     border-radius: 5px;
@@ -169,4 +169,12 @@ input[type='text'] {
   input {
     width: 300px;
   }
+}
+
+.float-right {
+  float: right;
+}
+
+.text-center {
+  text-align: center;
 }
