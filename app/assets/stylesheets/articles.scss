@@ -116,6 +116,12 @@ input[type='text'] {
   background-color: $primary-color;
   color: white;
 
+  a {
+    color: white;
+    text-transform: none;
+    text-decoration: none;
+  }
+
   .settings {
     position: absolute;
     right: 20px;
