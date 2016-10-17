@@ -20,3 +20,8 @@
 = render @article.comments
 
 = render 'comments/form', article: @article
+
+:javascript
+  window.onload = function () {
+    $('time.timeago').timeago();
+  };
