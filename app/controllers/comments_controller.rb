@@ -2,8 +2,7 @@ class CommentsController < ApplicationController
   before_action :get_article, only: [:create, :destroy]
 
   def create
-    @user = current_user
-    @comment = @article.comments.create({message: params[:comment][:message], user_id: @user.id})
+    @comment = @article.comments.create({message: params[:comment][:message], user_id: current_user.id})
 
     redirect_to article_path(@article)
   end
