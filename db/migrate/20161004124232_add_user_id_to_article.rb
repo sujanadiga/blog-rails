@@ -1,7 +1,7 @@
 class AddUserIdToArticle < ActiveRecord::Migration
   def change
     change_table :articles do |t|
-      t.belongs_to :user, index: true, foreign_key: true
+      t.belongs_to :user, index: true
     end
   end
 end
