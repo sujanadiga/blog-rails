@@ -1,9 +1,11 @@
 class ArticlesController < ApplicationController
   before_action :get_article, only: [:update, :show, :edit, :destroy]
-  before_action :get_user, only: [:new, :create]
 
   def index
-    @articles = Article.all
+    @q = Article.ransack(params[:q])
+    @articles = @q.result.includes(:user).paginate(page: params[:page], per_page: 5).order(updated_at: :desc)
+    @q.build_condition
+    @q.build_sort if @q.sorts.empty?
   end
 
   def new
@@ -13,6 +15,7 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.new(article_params)
     if @article.save
+      flash[:notice] = 'Article created successfully'
       redirect_to @article
     else
       render 'new'
@@ -22,6 +25,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
+      flash[:notice] = 'Article updated successfully'
       redirect_to @article
     else
       render 'edit'
@@ -36,6 +40,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
+    flash[:notice] = 'Article deleted successfully'
     redirect_to articles_path
   end
 

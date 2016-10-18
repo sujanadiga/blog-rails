@@ -1,18 +1,29 @@
 %h1 List of articles
+= render 'search', q: @q
 %table{:border => "1"}
   %thead
     %tr
-      %th.article-title Title
+      %th.article-title
+        =sort_link(@q, :title, 'Title', default_order: :desc)
+      %th.article-author
+        =sort_link(@q, :user_email, 'Author')
       %th.article-text Content
       %th.article-action Action
   %tbody
+    - if @articles.empty?
+      %tr
+        %td.text-center{colspan: 4} No articles to display
     - @articles.each do |article|
       %tr
         %td.article-title= article.title
-        %td.article-text= simple_format(article.text)
+        %td.article-author= article.user.email
+        %td.article-text= simple_format(truncate(article.text, length: 240))
         %td.article-action
           =link_to 'Read', article_path(article)
           =link_to 'Edit', edit_article_path(article), class: 'btn--warning'
           =link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn--error'
 %br
+%span.float-right= will_paginate @articles
 = link_to 'Write a new atricle', new_article_path, class: 'btn btn--block'
+%br
+%br

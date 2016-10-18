@@ -1,0 +1,16 @@
+= search_form_for q do |f|
+  = f.condition_fields do |c|
+    .search-field
+      =c.attribute_fields do |a|
+        =a.attribute_select associations: [:user]
+      =c.predicate_select
+      =c.value_fields do |v|
+        =v.text_field :value
+  %p
+  .search-field
+    Sort:
+    =f.sort_fields do |s|
+      =s.sort_select
+    %p
+  = f.submit class: 'btn btn--block'
+%br

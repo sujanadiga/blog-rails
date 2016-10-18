@@ -28,4 +28,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "X50>" }, default_url: "/images/:style/missing.png"
+  validates_attachment :avatar, content_type: { content_type: /\Aimage\/.*\z/ }, size: { in: 0..1024.kilobytes }
+
+  def self.ransackable_attributes(auth_obj = nil)
+    ['id', 'email', 'created_at']
+  end
 end

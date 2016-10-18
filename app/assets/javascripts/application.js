@@ -13,5 +13,4 @@
 //= require jquery
 //= require jquery.timeago
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .

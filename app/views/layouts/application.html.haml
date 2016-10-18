@@ -8,12 +8,18 @@
 
 %body
 .nav
-  My Blog
+  =link_to 'My Blog', root_path
   .settings
     - if user_signed_in?
-      =link_to 'Profile', edit_user_registration_path
+      - if current_user.avatar?
+        =link_to image_tag(current_user.avatar.url(:thumb), class: 'avatar'), edit_user_registration_path
+      - else
+        =link_to 'Profile', edit_user_registration_path
       =link_to 'Logout', destroy_user_session_path, method: :delete, data: {confirm: 'Are you sure you want to log out?'}
     - else
       =link_to 'Sign Up', new_user_registration_path
       =link_to 'Sign In', new_user_session_path
+- flash.each do |name, msg|
+  .dismissable{class: "dismissable--#{name}"}
+    = msg
 = yield

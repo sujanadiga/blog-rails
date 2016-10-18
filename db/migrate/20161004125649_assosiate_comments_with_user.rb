@@ -1,7 +1,7 @@
 class AssosiateCommentsWithUser < ActiveRecord::Migration
   def change
     change_table :comments do |t|
-      t.belongs_to :user, index: true, foreign_key: true
+      t.belongs_to :user, index: true
     end
   end
 end
