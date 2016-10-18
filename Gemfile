@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -26,6 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml', '~> 4.0.7'
 gem 'haml-rails', '~> 0.9.0'
 
+gem 'mysql2', '~> 0.4.4'
 gem 'devise', '~> 4.2.0'
 
 # Use ActiveModel has_secure_password
